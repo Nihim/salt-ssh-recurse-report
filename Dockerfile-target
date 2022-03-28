@@ -1,0 +1,7 @@
+FROM debian:11-slim
+
+RUN apt update && apt install -q -y openssh-server python3 && mkdir -p /run/sshd
+
+RUN echo "root:foobar" | chpasswd && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+CMD ["/usr/sbin/sshd", "-D"]

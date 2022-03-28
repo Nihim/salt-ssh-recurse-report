@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  salt-ssh:
+    build:
+      context: .
+    image: salt-ssh
+    container_name: salt-ssh
+
+  salt-target:
+    build:
+      context: .
+      dockerfile: Dockerfile-target
+    image: salt-target
+    container_name: salt-target
+
+networks:
+  default:
+    name: salt-ssh

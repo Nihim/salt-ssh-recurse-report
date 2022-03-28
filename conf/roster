@@ -1,0 +1,4 @@
+target:
+  host: salt-target
+  user: root
+  passwd: foobar

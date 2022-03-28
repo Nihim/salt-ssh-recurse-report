@@ -1,0 +1,5 @@
+cachedir: /tmp/salt
+pki_dir: pki/salt/master
+file_roots:
+  base:
+    - ./

@@ -1,0 +1,6 @@
+salt-ssh:
+  roster_file: ./roster
+  config_dir: ./
+  ssh_priv: ./pki/salt/master/ssh/salt-ssh.rsa
+  ssh_log_file: /tmp/ssh.log
+  log_file: /tmp/log.txt
