@@ -7,12 +7,13 @@ RUN useradd -m -d /salt-ssh -s /bin/bash -u 1010 salt
 
 WORKDIR /salt-ssh
 
-ADD --chown=1010 conf ./
-ADD dir1 ./dir1/
-ADD dir2 ./dir2/
+COPY --chown=1010 conf ./
+COPY dir1 dir1
+COPY dir2 dir2
 
 RUN chown salt dir1 dir2
+RUN chmod 400 dir?/file5
 
 USER salt
 
-CMD ["sleep","900"]
+CMD ["sleep","inf"]
